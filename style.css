@@ -1,0 +1,63 @@
+/* Guitar Chord Book のページ: アプリと同じ「夜のステージ」。藍の地・金の照明・珊瑚色の印、見出しはセリフ体。 */
+:root {
+  --night: #07070f;
+  --night-2: #11121f;
+  --hairline: #24253a;
+  --text: #f4f4f8;
+  --sub: #a1a1b5;
+  --gold: #e0b25a;
+  --coral: #ff6b6b;
+  --serif: "Bodoni 72", Georgia, "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --gothic: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: var(--night); }
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--gothic);
+  line-height: 1.9;
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, rgba(224, 178, 90, 0.16), transparent 60%),
+    linear-gradient(180deg, #1a1b36 0, #0f1024 28rem, var(--night) 60rem),
+    var(--night);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+a { color: var(--gold); text-underline-offset: 3px; }
+.bar {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  max-width: 760px; margin: 0 auto; padding: 20px 16px 12px;
+  border-bottom: 1px solid var(--hairline);
+}
+.bar .mark { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; }
+.bar .mark img { width: 36px; height: 36px; border-radius: 9px; }
+.bar .mark span { font-family: var(--serif); font-size: 1.25rem; letter-spacing: 0.04em; }
+.bar nav { margin-left: auto; display: flex; gap: 4px; }
+.bar nav a {
+  color: var(--sub); text-decoration: none; font-size: 0.85rem;
+  padding: 6px 12px; border-radius: 999px;
+}
+.bar nav a[aria-current="page"] { color: #1a1300; background: var(--gold); }
+main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { font-family: var(--serif); font-weight: 600; font-size: 1.8rem; letter-spacing: 0.04em; line-height: 1.4; margin: 0 0 16px; }
+h2 {
+  font-family: var(--serif); font-weight: 600; font-size: 1.2rem; letter-spacing: 0.04em;
+  margin: 2.4em 0 0.8em; padding-top: 0.8em; border-top: 1px solid var(--hairline);
+}
+h2::before { content: ""; display: block; width: 28px; height: 2px; background: var(--gold); margin-bottom: 12px; }
+p { margin: 0 0 1em; }
+.muted { color: var(--sub); }
+.hero { display: flex; gap: 20px; align-items: center; margin-bottom: 24px; }
+.hero img { width: 112px; height: 112px; border-radius: 26px; border: 1px solid var(--hairline); flex: none; }
+.qa {
+  background: linear-gradient(180deg, rgba(244, 244, 248, 0.07), rgba(244, 244, 248, 0.02));
+  border: 1px solid rgba(244, 244, 248, 0.12);
+  border-radius: 20px; padding: 16px 20px; margin: 0 0 12px;
+}
+.qa p { margin: 0; }
+footer { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; color: var(--sub); font-size: 0.8rem; border-top: 1px solid var(--hairline); }
+@media (max-width: 480px) {
+  .hero { flex-direction: column; align-items: flex-start; }
+  .bar nav { margin-left: 0; }
+}
